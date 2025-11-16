@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+</head>
+<body>
+    <p>PROCEED TO SUPPLY THE REQUIRED INFORMATION TO CREATE AN ACCOUNT </p>
+    <h3>Please choose what applies to you.</h3>
+   <select id="roleSelect" onchange="redirectUser()">
+  <option value="">-- Choose an option --</option>
+  <option value="doctor.html">Doctor</option>
+  <option value="consultant.html">Consultant</option>
+  <option value="patient.html">Patient</option>
+</select>
+
+<script>
+function redirectUser() {
+  var page = document.getElementById("roleSelect").value;
+  if(page !== "") {
+    window.location.href = page;
+  }
+}
+</script>
+</body>
+</html>
