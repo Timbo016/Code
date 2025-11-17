@@ -1,0 +1,165 @@
+/* ==========================
+   GLOBAL RESET & BASE
+   ========================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #c7d7ff, #e7e6ff, #d0caff);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 18px;
+  color: #1d2a3a;
+  background-image: url(health2.webp);
+  background-repeat: no-repeat;
+  background-size: cover;
+  backdrop-filter: blur(10px);
+}
+
+/* ==========================
+   NAVIGATION
+   ========================== */
+nav {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(10px);
+  padding: 14px 0;
+  border-radius: 8px;
+  margin-bottom: 35px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+  list-style: none;
+}
+
+nav a {
+  color: #1d2a3a;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 17px;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: #5e6bff;
+}
+
+/* ==========================
+   TYPOGRAPHY
+   ========================== */
+h2, h3 {
+  text-align: center;
+  margin-bottom: 22px;
+  color: white;
+ 
+  font-weight: 700;
+}
+
+p {
+  font-size: 17px;
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+/* ==========================
+   FORM STYLING
+   ========================== */
+form {
+  width: 100%;
+  max-width: 490px;
+  background: rgba(255, 255, 255, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.58);
+  backdrop-filter: blur(12px);
+  padding: 25px 22px;
+  border-radius: 6px;
+  margin-bottom: 32px;
+  box-shadow: 0 6px 22px rgba(44, 44, 78, 0.08);
+}
+
+label {
+  color: #2a3857;
+  font-weight: 600;
+  margin-bottom: 6px;
+  display: block;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1.3px solid #9aa6e8;
+  border-radius: 4px;
+  margin: 6px 0 18px;
+  font-size: 15px;
+  background: rgba(255, 255, 255, 0.85);
+}
+
+textarea {
+  resize: vertical;
+}
+
+/* ==========================
+   BUTTONS
+   ========================== */
+button {
+  width: 100%;
+  padding: 13px;
+  background: #5e6bff;
+  color: #ffffff;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  font-weight: 600;
+  cursor: pointer;
+  position: relative;
+  transition: 0.25s;
+}
+
+/* Pulse glow (heartbeat vibe) */
+button:hover {
+  box-shadow: 0 0 12px rgba(94, 107, 255, 0.8), 
+              0 0 22px rgba(94, 107, 255, 0.5);
+  transform: scale(1.02);
+}
+
+/* ==========================
+   PATIENT QR BOX (HIDDEN INITIALLY)
+   ========================== */
+#patientQrCode {
+  width: 100%;
+  max-width: 490px;
+  background: rgba(255, 255, 255, 0.42);
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  padding: 20px;
+  border-radius: 6px;
+  margin-top: 25px;
+  text-align: center;
+  display: none;
+}
+
+/*For radio button*/
+.radio {
+  justify-items: center;
+}
+
+/* ==========================
+   RESPONSIVE ADJUSTMENTS
+   ========================== */
+@media (max-width: 640px) {
+  nav ul {
+    flex-direction: column;
+    gap: 12px;
+  }
+}
