@@ -2,6 +2,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Patient's Sign Up</title>
 </head>
 <body>
@@ -29,22 +30,24 @@
   placeholder="Enter description here" required></textarea><br><br>
   
   <!--For Radio button-->
-  <p>Whose service do you require</p>
-  <input type="radio" id="" name="professional">
+  <p>Whose service do you require?</p>
+  <div class="radio">
+     <input type="radio" id="" name="professional">
   <label for="Doctor">Doctor</label><br>
   <input type="radio" id="" name="professional">
   <label for="Consultant">Consultant</label>
+  </div>
   <br><br>
    <label>Password:</label><br>
   <input type="password" name="password" required><br><br>
-    
+
   <button type="submit">Register</button>
 </form>
-    
-    <div id="patientQrCode" style="margin-top: 20px;">
+
+<div id="patientQrCode" style="margin-top: 20px;">
   <!--QR code will be inserted here -->
 </div>
 
-</body>
 
+</body>
 </html>
