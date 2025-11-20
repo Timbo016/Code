@@ -157,6 +157,7 @@ document.getElementById("myForm").addEventListener("submit", function (event) {
 });
 
 
+
 function downloadQrcode() {
     const barcodeDiv = document.getElementById("patientQrCode");
     const img = barcodeDiv.querySelector("img");
@@ -169,8 +170,35 @@ function downloadQrcode() {
         return;
     }
 
-    const link = document.createElement("a");
-    link.href = imageURL;
-    link.download = "barcode.png";
-    link.click();
+    // Create a canvas to draw the image
+    const canvas = document.createElement("canvas");
+    const context = canvas.getContext("2d");
+
+    // Wait for image to fully load
+    const tempImg = new Image();
+    tempImg.crossOrigin = "anonymous"; // important for canvas
+        
+    tempImg.onload = function() {
+        canvas.width = tempImg.width;
+        canvas.height = tempImg.height;
+
+        // Draw image on canvas
+        context.drawImage(tempImg, 0, 0);
+
+        // Convert canvas to Data URL (PNG)
+        const imageURL = canvas.toDataURL("image/png");
+
+        // Create temporary download link
+        const link = document.createElement("a");
+        link.href = imageURL;
+        link.download = "qrcode.png";
+
+        // Required for mobile
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    };
+
+    tempImg.src = img.src;
 }
+
