@@ -1,0 +1,54 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Patient's Sign Up</title>
+</head>
+<body>
+    <h2>Patient's Registration</h2>
+
+<form action="#" method="post" id="myForm">
+  <label>Full Name:</label><br>
+  <input type="text" name="name" required id="patientName"><br><br>
+
+  <label>Title (Mr/Ms/Mrs):</label><br>
+  <input type="text" name="title"  id="patientTitle"><br><br>
+
+  <label>Email:</label><br>
+  <input type="email" name="email"  id="patientEmail"><br><br>
+
+  <label>Phone Number:</label><br>
+  <input type="number" name="number"  id="patientNumber"><br><br>
+
+  <label>Illness:</label><br>
+  <input type="text" name="illness"  id="patientIllness"><br><br>
+
+  <!--For textarea-->
+  <p>Please describe your illness</p>
+  <textarea id="patientDescription" name="Illness" id="" rows="10" cols="20" 
+  placeholder="Enter description here" ></textarea><br><br>
+  
+  <!--For Radio button-->
+  <p>Whose service do you require?</p>
+  <div class="radio">
+     <input type="radio" id="" name="professional">
+  <label for="Doctor">Doctor</label><br>
+  <input type="radio" id="" name="professional">
+  <label for="Consultant">Consultant</label>
+  </div>
+  <br><br>
+   <label>Password:</label><br>
+  <input type="password" name="password"  id="patient"><br><br>
+
+  <button type="submit">Register</button>
+</form>
+
+<div id="patientQrCode" style="margin-top: 20px;">
+  <!--QR code will be inserted here -->
+</div>
+<script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.0/dist/JsBarcode.all.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script src="QRcode.js"></script>
+</body>
+</html>
