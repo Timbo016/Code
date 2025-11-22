@@ -79,20 +79,29 @@ async function encryptText(text, password) {
 }
 
 // Decrypt text
-async function decryptText(encryptedObj, password) {
-    const salt = fromBase64(encryptedObj.salt);
-    const iv = fromBase64(encryptedObj.iv);
-    const ciphertext = fromBase64(encryptedObj.ciphertext);
+async function decryptText(text,password) {
+    //const output = document.getElementById("output");
 
-    const key = await deriveKey(password, salt);
+    try {
+        const encryptedObj = JSON.parse(text);
+        const key = await getKey(password);
 
-    const decrypted = await crypto.subtle.decrypt(
-        { name: "AES-GCM", iv },
-        key,
-        ciphertext
-    );
+        const iv = new Uint8Array(encryptedObj.iv);
+        const encryptedData = Uint8Array.from(
+            atob(encryptedObj.data),
+            c => c.charCodeAt(0)
+        );
 
-    return dec.decode(decrypted);
+        const decrypted = await crypto.subtle.decrypt(
+            { name: "AES-GCM", iv },
+            key,
+            encryptedData
+        );
+
+        console.log( new TextDecoder().decode(decrypted));
+    } catch (err) {
+        console.log("Error: " + err)
+    }
 }
 
 // ----------- QR GENERATION ------------- //
