@@ -140,7 +140,7 @@ function startScan() {
                 const password = prompt("Enter password to decrypt:");
 
                 const decrypted = await decryptText(encryptedObj, password);
-               alert(decrypted)
+                document.getElementById("decryptedOutput").innerText = decrypted;
 
             } catch (err) {
                 alert("Invalid QR code or wrong password!");
@@ -152,4 +152,5 @@ function startScan() {
 </script>
 </body>
 </html>
+
 
