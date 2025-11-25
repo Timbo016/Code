@@ -163,3 +163,56 @@ button:hover {
     gap: 12px;
   }
 }
+
+
+
+
+
+
+
+
+/* --- HAMBURGER MENU CSS (MINIMAL & NON-CONFLICTING) --- */
+.hamburger {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+/* Mobile view */
+@media (max-width: 768px) {
+
+    .hamburger {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background: white;
+        position: absolute;
+        top: 70px;
+        right: 0;
+        width: 200px;
+        padding: 15px;
+        border: 1px solid #ddd;
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin-bottom: 15px;
+    }
+}
+
+/* Social icons spacing (minimal, non-conflicting) */
+.social-links a {
+    margin: 0 10px;
+    font-size: 24px;
+    color: inherit;
+}
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+}

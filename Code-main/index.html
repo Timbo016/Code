@@ -3,18 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Your existing CSS -->
     <link rel="stylesheet" href="style.css">
+
+    <!-- Font Awesome for social icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
     <title>Central Management Health</title>
 </head>
 <body>
-    <nav>
-        <ul>
-           <a href="registration.html">Register</a>
-           <a href="">Login</a>
-           <a href="">About us</a>
-           <a href="">Contact us</a>
-        </ul>
 
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="logo">Central Management Health</div>
+
+        <!-- Hamburger Menu -->
+        <div class="hamburger" id="hamburger">
+            <i class="fa fa-bars"></i>
+        </div>
+
+        <ul class="nav-links" id="navLinks">
+            <li><a href="registration.html">Register</a></li>
+            <li><a href="patient.html">Login</a></li>
+            <li><a href="social-links">Contact Us</a></li>
+        </ul>
     </nav>
+
+    <!-- HERO SECTION -->
+    <section id="home" class="hero">
+        <h1>Transforming Healthcare Systems</h1>
+        <p>Expert consultancy to optimize operations, improve patient care, and ensure compliance.</p>
+    </section>
+
+    <!-- HEALTH INFORMATION SECTION -->
+    <section class="health-info">
+        <p>
+            At Central Management Health, we believe that good health begins with knowledge. 
+            Understanding how your body works and the importance of preventive care can save 
+            lives. Regular checkups, proper nutrition, adequate hydration, and early detection 
+            of medical conditions are powerful steps toward a healthier future. Our mission is 
+            to guide individuals and healthcare providers in creating safer environments, 
+            improving patient outcomes, and promoting long-term well-being.
+        </p>
+    </section>
+
+    <!-- SOCIAL MEDIA SECTION -->
+    <section class="social-section">
+        <h3 style="color: black;">Connect With Us</h3>
+
+        <div class="social-links">
+            <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-x-twitter"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 Central Management Health. All rights reserved.</p>
+    </footer>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        // MOBILE NAVIGATION TOGGLE
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('show');
+        });
+    </script>
+
 </body>
 </html>
